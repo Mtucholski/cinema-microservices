@@ -1,0 +1,43 @@
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      routes:
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/api/customer/**
+          filters:
+            - StripPrefix=2
+        - id: reservation-service
+          uri: lb://reservations-service
+          predicates:
+            - Path=/api/reservations/**
+          filters:
+            - StripPrefix=2
+        - id: film-service
+          uri: lb://films-service
+          predicates:
+            - Path=/api/film/**
+          filters:
+            - StripPrefix=2
+        - id: employee-service
+          uri: lb://employee-service
+          predicates:
+            - Path=/api/employees/**
+          filters:
+            - StripPrefix=2
+        - id: room-service
+          uri: lb://room-service
+          predicates:
+            - Path=/api/rooms/**
+          filters:
+            - StripPrefix=2
+        - id: tickets-service
+          uri: lb://tickets-service
+          predicates:
+            - Path=/api/tickets/**
+          filters:
+            - StripPrefix=2
