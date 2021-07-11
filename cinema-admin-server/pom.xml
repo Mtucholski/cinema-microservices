@@ -4,21 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <modelVersion>4.0.0</modelVersion>
 
-     <groupId>spring-cinema</groupId>
-     <artifactId>cinema-admin-server</artifactId>
+     <groupId>com.mtucholski</groupId>
+     <artifactId>sppr</artifactId>
      <packaging>jar</packaging>
      <description>Admin server</description>
-
-     <parent>
-          <artifactId>spring-boot-starter-parent</artifactId>
-          <groupId>org.springframework.boot</groupId>
-          <version>2.5.2</version>
-     </parent>
+     <properties>
+          <spring-boot-admin.version>2.4.1</spring-boot-admin.version>
+          <docker.image.exposed.port>9090</docker.image.exposed.port>
+          <docker.image.dockerfile.dir>${basedir}/../docker</docker.image.dockerfile.dir>
+     </properties>
      <dependencies>
           <!-- Spring Boot -->
           <dependency>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-starter</artifactId>
+               <version>2.5.2</version>
           </dependency>
           <dependency>
                <groupId>org.springframework.cloud</groupId>
